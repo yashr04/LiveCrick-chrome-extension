@@ -1,0 +1,11 @@
+{
+    "name": "LiveCrick",
+    "version": "1.0.0",
+    "description": "Best extension in the world",
+    "manifest_version": 3,
+    "author": "Yash Raj",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "LiveCrick"
+    }
+}

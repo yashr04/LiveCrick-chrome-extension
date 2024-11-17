@@ -1,3 +1,126 @@
-body {
+/* Modern Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     min-width: 300px;
-}
+    min-height: 400px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #1a1f35 0%, #2d3250 100%);
+    color: #ffffff;
+    padding: 1rem;
+  }
+  
+  /* Header Styles */
+  p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #4CAF50;
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  
+  p:first-of-type::after {
+    content: '🏏';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.2rem;
+  }
+  
+  /* Match List Container */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #1a1f35;
+  }
+  
+  /* Custom Scrollbar */
+  ul::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ul::-webkit-scrollbar-track {
+    background: #1a1f35;
+    border-radius: 3px;
+  }
+  
+  ul::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 3px;
+  }
+  
+  /* Match Items */
+  li {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out forwards;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  li:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Status Highlights */
+  li:nth-child(odd) {
+    border-left-color: #2196F3;
+  }
+  
+  /* Loading State */
+  @keyframes shimmer {
+    0% { background-position: -468px 0 }
+    100% { background-position: 468px 0 }
+  }
+  
+  .loading {
+    background: linear-gradient(to right, #1a1f35 8%, #2d3250 18%, #1a1f35 33%);
+    background-size: 800px 104px;
+    animation: shimmer 1.5s linear infinite;
+  }
+  
+  /* Slide In Animation */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    body {
+      min-width: 250px;
+    }
+    
+    p:first-of-type {
+      font-size: 1.2rem;
+    }
+    
+    li {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
